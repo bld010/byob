@@ -1,5 +1,3 @@
-
-
 let senators =
 [ { name: 'Lamar Alexander',
     state: 'TN',
