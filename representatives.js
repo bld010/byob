@@ -3896,5 +3896,4 @@ cleanedStateData[53].name = "Guam";
 cleanedStateData[54].name = "Vermont";
 cleanedStateData[55].name = "Alaska";
 
-
 module.exports = cleanedStateData;

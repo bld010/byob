@@ -1,6 +1,5 @@
 let states = require('../../representatives');
 
-console.log(states[0].senators[0])
 const createState = (knex, state) => {
   return knex('states').insert({
     abbreviation: state.abbreviation,
@@ -27,9 +26,6 @@ const createState = (knex, state) => {
       return Promise.all(senatorsPromises)
     })
 }
-
-//will have to add in state names (manually? or add
-//a new column to the table, update data, then reseed)
 
 const createSenator = (knex, senator) => {
   return knex('senators').insert(senator);   
