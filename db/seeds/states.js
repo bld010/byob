@@ -1,5 +1,6 @@
 let states = require('../../representatives');
 
+console.log(states[0].senators[0])
 const createState = (knex, state) => {
   return knex('states').insert({
     abbreviation: state.abbreviation
@@ -13,7 +14,11 @@ const createState = (knex, state) => {
             name: senator.name,
             title: senator.title,
             state_abbr: senator.state,
-            state_id: stateId[0]
+            state_id: stateId[0],
+            rank: senator.rank,
+            party: senator.party,
+            twitter_account: senator.twitter_account,
+            url: senator.url
           })
         )
       })
