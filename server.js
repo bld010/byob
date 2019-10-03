@@ -96,5 +96,43 @@ app.get('/api/v1/senators/:id', (request, response) => {
     .catch(error => {
       response.status(500).json({ error })
     })
+})
 
+app.post('/api/v1/senators', (request, response) => {
+  let senator = request.body;
+
+  for (let requiredParameter of [
+    'name', 
+    'title',
+    'state_abbr',
+    'state_id',
+    'rank',
+    'party',
+    'url'
+    ]) {
+
+      let errorText = `
+        Expected format: { 
+          name: <String>, 
+          title: <String>, 
+          state_abbr: <String>, 
+          state_id: <Number>, 
+          rank: <String>, 
+          party: <String>, 
+          url: <String> }
+          You're missing a ${requiredParameter} property.`
+
+      if (!senator[requiredParameter]) {
+        return response.status(422)
+        .json({ error: errorText });
+      }
+  }
+
+  database('senators').insert(senator, 'id')
+    .then(senatorId => {
+      response.status(201).json({ id: senatorId[0]})
+    })
+    .catch(error => {
+      response.status(500).json({ error })
+    })
 })
