@@ -43,3 +43,19 @@ app.post('/api/v1/states', (request, response) => {
       response.status(500).json({ error })
     });
 })
+
+app.get('/api/v1/states/:id', (request, response) => {
+  database('states').where('id', parseInt(request.params.id)).select()
+    .then(states => {
+      if (states.length) {
+        response.status(200).json(states);
+      } else {
+        response.status(404).json({
+          error: `Could not find state with id ${request.params.id}`
+        })
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    })
+})
