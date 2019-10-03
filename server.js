@@ -81,3 +81,20 @@ app.get('/api/v1/senators', (request, response) =>  {
       response.status(500).json({ error })
     })
 })
+
+app.get('/api/v1/senators/:id', (request, response) => {
+  database('senators').where('id', parseInt(request.params.id)).select()
+    .then(senators => {
+      if (senators.length) {
+        response.status(200).json(senators);
+      } else {
+        response.status(404).json({
+          error: `Could not find senator with id ${request.params.id}.`
+        })
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error })
+    })
+
+})
