@@ -15,7 +15,13 @@ app.listen(app.get('port'), () => {
 app.get('/api/v1/states', (request, response) => {
   database('states').select()
     .then((states) => {
-      response.status(200).json(states);
+      if (states.length) {
+        response.status(200).json(states);
+      } else {
+        response.status(404).json({
+          error: "No states found."
+        })
+      }
     })
     .catch((error) => {
       response.status(500).json({ error });
@@ -57,5 +63,21 @@ app.get('/api/v1/states/:id', (request, response) => {
     })
     .catch(error => {
       response.status(500).json({ error });
+    })
+})
+
+app.get('/api/v1/senators', (request, response) =>  {
+  database('senators').select()
+    .then((senators) => {
+      if (senators.length) {
+        response.status(200).json(senators)
+      } else {
+        response.status(404).json({
+          error: `No senators found.`
+        })
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error })
     })
 })
