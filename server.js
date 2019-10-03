@@ -136,3 +136,18 @@ app.post('/api/v1/senators', (request, response) => {
       response.status(500).json({ error })
     })
 })
+
+app.delete('/api/v1/senators/:id', (request, response) => {
+
+  database('senators').where('id', parseInt(request.params.id)).select().del()
+    .then(success => {
+      if (success) {
+        response.status(204)
+      } else {
+        response.status(404).send(`Delete unsuccessful. Make sure the senator id is correct in your request url.`)
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error })
+    })
+})
