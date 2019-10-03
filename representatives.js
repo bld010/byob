@@ -3839,6 +3839,61 @@ const populateRepresentativesInStates = () => {
 }
 
 let cleanedStateData = populateRepresentativesInStates();
+cleanedStateData[0].name = "Louisiana";
+cleanedStateData[1].name = "North Carolina";
+cleanedStateData[2].name = "Alabama";
+cleanedStateData[3].name = "California";
+cleanedStateData[4].name = "Georgia";
+cleanedStateData[5].name = "Texas";
+cleanedStateData[6].name = "Michigan";
+cleanedStateData[7].name = "Nevada";
+cleanedStateData[8].name = "North Dakota";
+cleanedStateData[9].name = "Iowa";
+cleanedStateData[10].name = "Nebraska";
+cleanedStateData[11].name = "Indiana";
+cleanedStateData[12].name = "Ohio";
+cleanedStateData[13].name = "Kentucky";
+cleanedStateData[14].name = "Virginia";
+cleanedStateData[15].name = "Arizona";
+cleanedStateData[16].name = "Florida";
+cleanedStateData[17].name = "Utah";
+cleanedStateData[18].name = "Oregon";
+cleanedStateData[19].name = "Delaware";
+cleanedStateData[20].name = "Illinois";
+cleanedStateData[21].name = "Pennsylvania";
+cleanedStateData[22].name = "New York";
+cleanedStateData[23].name = "Maryland";
+cleanedStateData[24].name = "Colorado";
+cleanedStateData[25].name = "Tennessee";
+cleanedStateData[26].name = "Hawaii";
+cleanedStateData[27].name = "Wyoming";
+cleanedStateData[28].name = "Rhode Island";
+cleanedStateData[29].name = "Massachussetts";
+cleanedStateData[30].name = "Missouri";
+cleanedStateData[31].name = "South Carolina";
+cleanedStateData[32].name = "Oklahoma";
+cleanedStateData[33].name = "Connecticut";
+cleanedStateData[34].name = "Minnesota";
+cleanedStateData[35].name = "Arkansas";
+cleanedStateData[36].name = "Kansas";
+cleanedStateData[37].name = "Washington";
+cleanedStateData[38].name = "Wisconsin";
+cleanedStateData[39].name = "Idaho";
+cleanedStateData[40].name = "Montana";
+cleanedStateData[41].name = "Maine";
+cleanedStateData[42].name = "Puerto Rico";
+cleanedStateData[43].name = "New Jersey";
+cleanedStateData[44].name = "Mississippi";
+cleanedStateData[45].name = "New Mexico";
+cleanedStateData[46].name = "South Dakota";
+cleanedStateData[47].name = "New Hampshire";
+cleanedStateData[48].name = "West Virginia";
+cleanedStateData[49].name = "District of Columbia";
+cleanedStateData[50].name = "Virgin Islands";
+cleanedStateData[51].name = "American Samoa";
+cleanedStateData[52].name = "Northern Mariana Islands";
+cleanedStateData[53].name = "Guam";
+cleanedStateData[54].name = "Vermont";
+cleanedStateData[55].name = "Alaska";
 
-console.log(JSON.stringify(cleanedStateData))
-
+module.exports = cleanedStateData;
