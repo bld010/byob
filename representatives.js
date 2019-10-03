@@ -3897,7 +3897,4 @@ cleanedStateData[54].name = "Vermont";
 cleanedStateData[55].name = "Alaska";
 
 
-console.log(cleanedStateData.map(state => [state.abbreviation, state.name]))
-// console.log(cleanedStateData.slice(50, 57))
-
 module.exports = cleanedStateData;
