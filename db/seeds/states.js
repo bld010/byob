@@ -27,9 +27,6 @@ const createState = (knex, state) => {
     })
 }
 
-//add party,twitter,url, rank columns to senator table, reeseed
-
-
 //will have to add in state names (manually? or add
 //a new column to the table, update data, then reseed)
 
