@@ -12,6 +12,12 @@ app.listen(app.get('port'), () => {
   console.log(`App is listening on port ${app.get('port')}`)
 })
 
-app.get('/', (request, response) => {
-  response.send('Hey! This is BYOB ')
+app.get('/api/v1/states', (request, response) => {
+  database('states').select()
+    .then((states) => {
+      response.status(200).json(states);
+    })
+    .catch((error) => {
+      response.status(500).json({ error });
+    })
 })
