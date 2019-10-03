@@ -3840,7 +3840,7 @@ const populateRepresentativesInStates = () => {
 
 let cleanedStateData = populateRepresentativesInStates();
 
-console.log(cleanedStateData)
+// console.log(cleanedStateData)
 
 
 module.exports = cleanedStateData;
