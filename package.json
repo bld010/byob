@@ -4,5 +4,26 @@
   "version": "1.0.0",
   "engines": {
     "node": "12.1.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "knexfile.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.19.4",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bld010/byob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bld010/byob/issues"
+  },
+  "homepage": "https://github.com/bld010/byob#readme"
 }
