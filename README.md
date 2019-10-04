@@ -27,7 +27,23 @@ GET /api/v1/states
 Example response: 
 ```json
 [
-    
+   {
+        "id": 169,
+        "name": "Louisiana",
+        "abbreviation": "LA",
+        "created_at": "2019-10-03T01:12:17.283Z",
+        "updated_at": "2019-10-03T01:12:17.283Z"
+    },
+    {
+        "id": 171,
+        "name": "North Carolina",
+        "abbreviation": "NC",
+        "created_at": "2019-10-03T01:12:17.289Z",
+        "updated_at": "2019-10-03T01:12:17.289Z"
+    },
+    .
+    .
+    .
 ]
 ```
 
@@ -60,23 +76,15 @@ GET /api/v1/states/:id
 Example successful response: 
 ```json
 [
-    {
-        "id": 355,
-        "name": "John Barrasso",
-        "title": "Senator, 1st Class",
-        "state_abbr": "WY",
-        "state_id": 196,
-        "created_at": "2019-10-03T01:12:17.361Z",
-        "updated_at": "2019-10-03T01:12:17.361Z",
-        "rank": "junior",
-        "party": "R",
-        "twitter_account": "SenJohnBarrasso",
-        "url": "https://www.barrasso.senate.gov"
+       {
+        "id": 169,
+        "name": "Louisiana",
+        "abbreviation": "LA",
+        "created_at": "2019-10-03T01:12:17.283Z",
+        "updated_at": "2019-10-03T01:12:17.283Z"
     }
 ]
 ```
-
-
 
 ### Add a New State
 
@@ -126,6 +134,7 @@ GET /api/v1/senators
 
 | Status | Response |
 | --- | --- |
+| 200 | Array of all senators |
 
 Example response:
 ```json
@@ -174,6 +183,8 @@ GET /api/v1/senators/:id
 
 | Status | Response |
 | --- | --- |
+| 200 | Array containing selected senator. |
+| 404 | `{ "error": "Could not find senator with id 300." }` |
 
 Example response: 
 ```json
