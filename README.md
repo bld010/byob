@@ -111,6 +111,8 @@ POST /api/v1/states
 
 | Status | Response |
 | --- | --- |
+| 201 | Unique id of newly-created state `{ "id": 342" }` |
+| 422 | { error: Expected format: { name: `<String>`, abbreviation `<String>` } You're missing a [requiredParameter] property. }   |
 
 ## Senators
 
