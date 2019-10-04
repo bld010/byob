@@ -1,0 +1,27 @@
+{
+  "name": "byob",
+  "version": "1.0.0",
+  "description": "## States",
+  "main": "knexfile.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.19.4",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bld010/byob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bld010/byob/issues"
+  },
+  "homepage": "https://github.com/bld010/byob#readme"
+}

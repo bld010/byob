@@ -40,10 +40,14 @@ Example response:
         "abbreviation": "NC",
         "created_at": "2019-10-03T01:12:17.289Z",
         "updated_at": "2019-10-03T01:12:17.289Z"
+<<<<<<< HEAD
     },
     .
     .
     .
+=======
+    }
+>>>>>>> e104cf13631ba192ab80bd3da52c30d561f2beff
 ]
 ```
 
@@ -63,7 +67,11 @@ GET /api/v1/states/:id
 | ---- | --- | ---|
 | `id` | `number` | Unique id associated with each state |
 | `abbreviation` | `string` | Two-letter, capitalized abbreviation for a state or territory |
+<<<<<<< HEAD
 | name | `string` | Full name of state or territory |
+=======
+| `name` | `string` | Full name of state or territory |
+>>>>>>> e104cf13631ba192ab80bd3da52c30d561f2beff
 
 ##### Response: 
 
@@ -152,9 +160,25 @@ Example response:
         "twitter_account": "SenJohnBarrasso",
         "url": "https://www.barrasso.senate.gov"
     },
+<<<<<<< HEAD
     .
     .
     .
+=======
+    {
+      "id": 365,
+      "name": "James Inhofe",
+      "title": "Senator, 2nd Class",
+      "state_abbr": "OK",
+      "state_id": 201,
+      "created_at": "2019-10-03T01:12:17.367Z",
+      "updated_at": "2019-10-03T01:12:17.367Z",
+      "rank": "senior",
+      "party": "R",
+      "twitter_account": "InhofePress",
+      "url": "https://www.inhofe.senate.gov"
+  }
+>>>>>>> e104cf13631ba192ab80bd3da52c30d561f2beff
 ]
 ```
 
