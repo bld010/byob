@@ -24,25 +24,10 @@ GET /api/v1/states
 | --- | --- |
 | 200 | Array of state objects |
 
-```
 Example response: 
+```json
 [
-    {
-        "id": 355,
-        "name": "John Barrasso",
-        "title": "Senator, 1st Class",
-        "state_abbr": "WY",
-        "state_id": 196,
-        "created_at": "2019-10-03T01:12:17.361Z",
-        "updated_at": "2019-10-03T01:12:17.361Z",
-        "rank": "junior",
-        "party": "R",
-        "twitter_account": "SenJohnBarrasso",
-        "url": "https://www.barrasso.senate.gov"
-    },
-    .
-    .
-    .
+    
 ]
 ```
 
@@ -142,6 +127,28 @@ GET /api/v1/senators
 | Status | Response |
 | --- | --- |
 
+Example response:
+```json
+[
+	{
+        "id": 355,
+        "name": "John Barrasso",
+        "title": "Senator, 1st Class",
+        "state_abbr": "WY",
+        "state_id": 196,
+        "created_at": "2019-10-03T01:12:17.361Z",
+        "updated_at": "2019-10-03T01:12:17.361Z",
+        "rank": "junior",
+        "party": "R",
+        "twitter_account": "SenJohnBarrasso",
+        "url": "https://www.barrasso.senate.gov"
+    },
+    .
+    .
+    .
+]
+```
+
 ### Find Senator By Id
 
 Find senator by `id`. To find all senators' unique ids, use `GET /api/v1/senators`. 
@@ -167,6 +174,25 @@ GET /api/v1/senators/:id
 
 | Status | Response |
 | --- | --- |
+
+Example response: 
+```json
+[
+	{
+        "id": 355,
+        "name": "John Barrasso",
+        "title": "Senator, 1st Class",
+        "state_abbr": "WY",
+        "state_id": 196,
+        "created_at": "2019-10-03T01:12:17.361Z",
+        "updated_at": "2019-10-03T01:12:17.361Z",
+        "rank": "junior",
+        "party": "R",
+        "twitter_account": "SenJohnBarrasso",
+        "url": "https://www.barrasso.senate.gov"
+    }
+]
+```
 
 ### Add Senator
 
