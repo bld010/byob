@@ -1,0 +1,8 @@
+{
+  "name": "members-of-congress-api",
+  "description": "API to find current members of congress",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.1.0"
+  }
+}
