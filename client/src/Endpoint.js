@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './Endpoint.css'
-import { getAllStates, getSpecificState } from './endpointDescriptions';
+import { getAllStatesInfo,
+         getSpecificStateInfo, 
+         getAllSenatorsInfo,
+         getSpecificSenatorInfo,
+         postNewStateInfo
+        } from './endpointDescriptions';
 import * as parse from '../node_modules/html-react-parser';
 import ReactJson from 'react-json-view';
 
@@ -19,10 +24,19 @@ export default class Endpoint extends Component {
   setEndpointInfo() {
     switch (this.state.endpoint_name) {
       case "GET all states":
-        return getAllStates;
+        return getAllStatesInfo;
 
       case "GET specific state":
-        return getSpecificState
+        return getSpecificStateInfo;
+
+      case "GET all senators":
+        return getAllSenatorsInfo; 
+
+      case "GET specific senator":
+        return getSpecificSenatorInfo;
+
+      case "POST new state":
+        return postNewStateInfo;
 
       default: return null
     }
@@ -46,8 +60,13 @@ export default class Endpoint extends Component {
             {parse(this.state.endpoint_info.parameters_table)}
             <h4>Response</h4>
             {parse(this.state.endpoint_info.response_table)}
-            <h4>Example Response</h4> 
-            <ReactJson src={this.state.endpoint_info.example_response}/>
+            
+            {this.state.endpoint_info.example_response &&
+               <>
+                <h4>Example Response</h4> 
+                <ReactJson src={this.state.endpoint_info.example_response}/>
+              </>
+            }
             <div>
 
               <h3>Where we will display user fetch component</h3>
