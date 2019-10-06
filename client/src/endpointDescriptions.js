@@ -461,7 +461,12 @@ const deleteSenatorResponseTable = `<table>
 
 export const getAllStatesInfo = {
   fetchCall: {
-    options: {},
+    options: {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    },
     request_url: '/api/v1/states'
     },
   endpoint_method_and_url: 'GET /api/v1/states',
@@ -473,8 +478,13 @@ export const getAllStatesInfo = {
 
 export const getSpecificStateInfo = {
   fetchCall: {
-    options: {},
-    request_url: '/api/v1/states/'
+    options: {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    },
+    request_url: '/api/v1/states/:id'
   },
   endpoint_method_and_url: 'GET /api/v1/states/:id',
   description: 'Find specific state by id',
@@ -485,7 +495,12 @@ export const getSpecificStateInfo = {
 
 export const getAllSenatorsInfo = {
   fetchCall: {
-    options: {},
+    options: {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    },
     request_url: '/api/v1/senators'
   },
   endpoint_method_and_url: 'GET /api/v1/senators',
@@ -497,8 +512,13 @@ export const getAllSenatorsInfo = {
 
 export const getSpecificSenatorInfo = {
   fetchCall: {
-    options: {},
-    request_url: '/api/v1/senators/'
+    options: {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    },
+    request_url: '/api/v1/senators/:id'
   },
   endpoint_method_and_url: 'GET /api/v1/senators/:id',
   description: 'Find specific senator by id',
@@ -510,7 +530,13 @@ export const getSpecificSenatorInfo = {
 
 export const postNewStateInfo = {
   fetchCall: {
-    options: {},
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: null,
+    },
     request_url: '/api/v1/states'
   },
   endpoint_method_and_url: 'POST /api/v1/states',
@@ -522,7 +548,13 @@ export const postNewStateInfo = {
 
 export const postNewSenatorInfo = {
   fetchCall: {
-    options: {},
+    options: {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: null
+    },
     request_url: '/api/v1/senators'
   },
   endpoint_method_and_url: 'POST /api/v1/senators',
@@ -534,8 +566,13 @@ export const postNewSenatorInfo = {
 
 export const deleteSenatorInfo = {
   fetchCall: {
-    options: {},
-    request_url: '/api/v1/senators/'
+    options: {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    },
+    request_url: '/api/v1/senators/:id'
   }, 
   endpoint_method_and_url: 'DELETE /api/v1/senators/:id',
   description: "Delete a senator by id",

@@ -18,7 +18,9 @@ export default class Endpoint extends Component {
     this.state = {
       endpoint_name: this.props.endpoint_name,
       user_request_data: null,
-      endpont_info: null
+      endpont_info: null,
+      response_data: null,
+      user_input: null
     }
 
   }
@@ -51,38 +53,75 @@ export default class Endpoint extends Component {
   }
 
 
-  componentDidMount() {
+  fireUserFetchCall = async (id_param='') => {
+    let request_url  = this.state.endpoint_info.fetchCall.request_url;
+    let options = this.state.endpoint_info.fetchCall.options
 
-    this.setState({ endpoint_info: this.setEndpointInfo() })
+    if (request_url.includes(':')) {
+      let id_url = request_url.replace(':id', id_param);
+
+      fetch(id_url, options)
+        .then(resp => resp.json())
+        .then(data => this.setState({ response_data: data }))
+    }
+
+  
+  }
+    
+
+  handleUserTestClick = () => {
+
+  }
+
+  componentDidMount = async () => {
+
+    await this.setState({ endpoint_info: this.setEndpointInfo() })
   }
 
   render() {
 
-      if (this.state.endpoint_info) {
-        return (
 
+      if (this.state.endpoint_info) {
+
+        let {
+          description,
+          endpoint_method_and_url,
+          parameters_table,
+          response_table,
+          example_response,
+          fetchCall
+        } = this.state.endpoint_info;
+
+        return (
           <section className="Endpoint">
             <h2>{this.state.endpoint_name}</h2>
-            <p>{this.state.endpoint_info.description}</p>
-            <code>{this.state.endpoint_info.endpoint_method_and_url}</code>
-            {this.state.endpoint_info.parameters_table && 
+            <p>{description}</p>
+            <code>{endpoint_method_and_url}</code>
+            {parameters_table && 
               <>
               <h4>Parameters</h4>
-              {parse(this.state.endpoint_info.parameters_table)}
+              {parse(parameters_table)}
               </>
             }
             <h4>Response</h4>
-            {parse(this.state.endpoint_info.response_table)}
+            {parse(response_table)}
             
-            {this.state.endpoint_info.example_response &&
+            {example_response &&
               <>
               <h4>Example Response</h4> 
-              <ReactJson src={this.state.endpoint_info.example_response}/>
+              <ReactJson src={example_response}/>
               </>
             }
+
             <div>
 
-              <h3>Where we will display user fetch component</h3>
+              <h3>Try it yourself:</h3>
+
+              {<code>{parse(fetchCall.request_url)}</code>}
+              
+              <input placeholder="Enter an id"></input>
+              <p>Response:</p>
+              <button onClick={this.handleUserTestClick}>Test API Call</button>
               {/* <button>Click here to test endpoint</button>  */}
               {/* <div>Show results here based on state</div> */}
               
