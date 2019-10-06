@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "html-react-parser": "^0.9.1",
+    "marked": "^0.7.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-markdown": "^4.2.2",
     "react-scripts": "3.2.0"
   },
   "scripts": {
@@ -27,6 +30,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }, 
+  },
   "proxy": "http://localhost:5000"
 }
