@@ -66,18 +66,21 @@ export const getAllStates = {
     request_url: '/api/v1/states'
     },
   description: 'Get all states in API',
-  endpoint: 'GET /api/v1/states',
   parameters_table: getAllStatesParametersTable,
   example_response: getAllStatesExampleResponse,
   response_table: getAllStatesResponseTable
   
 }
 
-// export const getSpecificState = {
-//   fetchCall: {
-//     options: {},
-//     request_url: '/api/v1/states/'
-//   }
-// }
+export const getSpecificState = {
+  fetchCall: {
+    options: {},
+    request_url: '/api/v1/states/'
+  },
+  description: 'Get specific state by ID',
+  parameters_table: null,
+  example_response: null,
+  response_table: null
+}
 
 

@@ -8,3 +8,13 @@
 .Endpoint h2 {
   text-decoration: underline;
 }
+
+.Endpoint table {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.Endpoint table td,
+.Endpoint table th {
+  padding: 10px;
+}
