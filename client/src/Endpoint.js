@@ -5,7 +5,8 @@ import { getAllStatesInfo,
          getAllSenatorsInfo,
          getSpecificSenatorInfo,
          postNewStateInfo,
-         postNewSenatorInfo
+         postNewSenatorInfo,
+         deleteSenatorInfo
         } from './endpointDescriptions';
 import * as parse from '../node_modules/html-react-parser';
 import ReactJson from 'react-json-view';
@@ -42,6 +43,9 @@ export default class Endpoint extends Component {
       case "POST new senator":
         return postNewSenatorInfo;
 
+      case "DELETE senator":
+        return deleteSenatorInfo
+
       default: return null
     }
   }
@@ -60,15 +64,20 @@ export default class Endpoint extends Component {
           <section className="Endpoint">
             <h2>{this.state.endpoint_name}</h2>
             <p>{this.state.endpoint_info.description}</p>
-            <h4>Parameters</h4>
-            {parse(this.state.endpoint_info.parameters_table)}
+            <code>{this.state.endpoint_info.endpoint_method_and_url}</code>
+            {this.state.endpoint_info.parameters_table && 
+              <>
+              <h4>Parameters</h4>
+              {parse(this.state.endpoint_info.parameters_table)}
+              </>
+            }
             <h4>Response</h4>
             {parse(this.state.endpoint_info.response_table)}
             
             {this.state.endpoint_info.example_response &&
-               <>
-                <h4>Example Response</h4> 
-                <ReactJson src={this.state.endpoint_info.example_response}/>
+              <>
+              <h4>Example Response</h4> 
+              <ReactJson src={this.state.endpoint_info.example_response}/>
               </>
             }
             <div>

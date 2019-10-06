@@ -440,12 +440,32 @@ const postNewSenatorResponseTable = `
 </tbody>
 </table>`;
 
+const deleteSenatorResponseTable = `<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>204</code></td>
+<td><code>No content</code> (Delete was successful.)</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>'Delete unsuccessful. Make sure the senator id is correct in your request url.'</td>
+</tr>
+</tbody>
+</table>`
+
 export const getAllStatesInfo = {
   fetchCall: {
     options: {},
     request_url: '/api/v1/states'
     },
-  description: 'GET all states in API',
+  endpoint_method_and_url: 'GET /api/v1/states',
+  description: 'List all states in API',
   parameters_table: getAllStatesParametersTable,
   example_response: getAllStatesExampleResponse,
   response_table: getAllStatesResponseTable
@@ -456,7 +476,8 @@ export const getSpecificStateInfo = {
     options: {},
     request_url: '/api/v1/states/'
   },
-  description: 'GET specific state by id',
+  endpoint_method_and_url: 'GET /api/v1/states/:id',
+  description: 'Find specific state by id',
   parameters_table: getSpecificStateParametersTable,
   example_response: getSpecificStateExampleResponse,
   response_table: getSpecificStateResponseTable
@@ -467,7 +488,8 @@ export const getAllSenatorsInfo = {
     options: {},
     request_url: '/api/v1/senators'
   },
-  description: 'GET all senators',
+  endpoint_method_and_url: 'GET /api/v1/senators',
+  description: 'List all senators',
   parameters_table: getAllSenatorsParametersTable,
   example_response: getAllSenatorsExampleResponse,
   response_table: getAllSenatorsResponseTable
@@ -478,7 +500,8 @@ export const getSpecificSenatorInfo = {
     options: {},
     request_url: '/api/v1/senators/'
   },
-  description: 'GET specific senator by id',
+  endpoint_method_and_url: 'GET /api/v1/senators/:id',
+  description: 'Find specific senator by id',
   parameters_table: getSpecificSenatorParametersTable,
   example_response: getSpecificSenatorExampleResponse,
   response_table: getSpecificSenatorResponseTable
@@ -490,7 +513,8 @@ export const postNewStateInfo = {
     options: {},
     request_url: '/api/v1/states'
   },
-  description: 'POST a new state/territory',
+  endpoint_method_and_url: 'POST /api/v1/states',
+  description: 'Add a new state/territory',
   parameters_table: postNewStateParametersTable,
   example_response: null,
   response_table: postNewStateResponseTable
@@ -501,10 +525,21 @@ export const postNewSenatorInfo = {
     options: {},
     request_url: '/api/v1/senators'
   },
-  description: 'POST a new senator',
+  endpoint_method_and_url: 'POST /api/v1/senators',
+  description: 'Add a new senator',
   parameters_table: postNewSenatorParametersTable,
   example_response: null,
   response_table: postNewSenatorResponseTable
 }
 
-export const deleteSenatorInfo = ''
+export const deleteSenatorInfo = {
+  fetchCall: {
+    options: {},
+    request_url: '/api/v1/senators/'
+  }, 
+  endpoint_method_and_url: 'DELETE /api/v1/senators/:id',
+  description: "Delete a senator by id",
+  parameters_table: null,
+  example_response: null,
+  response_table: deleteSenatorResponseTable
+}
