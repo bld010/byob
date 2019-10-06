@@ -17,4 +17,17 @@
 .Endpoint table td,
 .Endpoint table th {
   padding: 10px;
+  border: 1px solid lightgrey;
+}
+
+.Endpoint .testApiContainer {
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.Endpoint .pretty-json-container {
+  max-height: 350px;
+  min-height: 200px;
+  overflow: scroll;
 }
