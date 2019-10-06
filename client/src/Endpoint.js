@@ -4,7 +4,8 @@ import { getAllStatesInfo,
          getSpecificStateInfo, 
          getAllSenatorsInfo,
          getSpecificSenatorInfo,
-         postNewStateInfo
+         postNewStateInfo,
+         postNewSenatorInfo
         } from './endpointDescriptions';
 import * as parse from '../node_modules/html-react-parser';
 import ReactJson from 'react-json-view';
@@ -37,6 +38,9 @@ export default class Endpoint extends Component {
 
       case "POST new state":
         return postNewStateInfo;
+
+      case "POST new senator":
+        return postNewSenatorInfo;
 
       default: return null
     }

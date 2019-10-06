@@ -346,7 +346,7 @@ const postNewStateParametersTable = `
 <td><strong>Required</strong> Full name of state or territory</td>
 </tr>
 </tbody>
-</table>`
+</table>`;
 
 const postNewStateResponseTable = `
 <table>
@@ -366,7 +366,79 @@ const postNewStateResponseTable = `
 <td>{ error: Expected format: { name: <code>&lt;String&gt;</code>, abbreviation <code>&lt;String&gt;</code> } You're missing a [requiredParameter] property. }</td>
 </tr>
 </tbody>
-</table>`
+</table>`;
+
+const postNewSenatorParametersTable =`<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> Full name of senator</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>Senator's full title (Example: <code>'Senator, 1st Class</code>)</td>
+</tr>
+<tr>
+<td><code>state_abbr</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> Two-letter, capitalized abbreviation for a state or territory</td>
+</tr>
+<tr>
+<td><code>state_id</code></td>
+<td><code>number</code></td>
+<td><strong>Required</strong> Unique id associated with each state</td>
+</tr>
+<tr>
+<td><code>rank</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> Senator's rank (Example: <code>'junior'</code> or <code>'senior'</code>)</td>
+</tr>
+<tr>
+<td><code>party</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> Capitalized, one-letter abbreviation for senator's party (Example: <code>'R'</code>,<code>'D'</code>, <code>'I'</code>, etc.)</td>
+</tr>
+<tr>
+<td><code>twitter_account</code></td>
+<td><code>string</code></td>
+<td>Senator's official Twitter account handle or <code>null</code> if none provided. (Example: <code>'SenJohnKennedy</code>)</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td><strong>Required</strong> Senator's official government website URL (Example: <code>'https://www.kennedy.senate.gov/public'</code>)</td>
+</tr>
+</tbody>
+</table>`;
+
+const postNewSenatorResponseTable = `
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>New unique id for created senator (Example: <code>{ "id": 405 }</code>)</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Expected format: { <code>name:</code> <code>&lt;String&gt;</code>, <code>title:</code> <code>&lt;String&gt;</code>, <code>state_abbr</code>: <code>&lt;String&gt;</code>, <code>state_id:</code> <code>&lt;Number&gt;</code>, <code>rank:</code> <code>&lt;String&gt;</code>, <code>party:</code> <code>&lt;String&gt;</code>, <code>url:</code> <code>&lt;String&gt;</code> } You're missing a [requiredParameter] property.</td>
+</tr>
+</tbody>
+</table>`;
 
 export const getAllStatesInfo = {
   fetchCall: {
@@ -416,7 +488,7 @@ export const getSpecificSenatorInfo = {
 export const postNewStateInfo = {
   fetchCall: {
     options: {},
-    request_rul: '/api/v1/states'
+    request_url: '/api/v1/states'
   },
   description: 'POST a new state/territory',
   parameters_table: postNewStateParametersTable,
@@ -425,9 +497,14 @@ export const postNewStateInfo = {
 }
 
 export const postNewSenatorInfo = {
-
+  fetchCall: {
+    options: {},
+    request_url: '/api/v1/senators'
+  },
+  description: 'POST a new senator',
+  parameters_table: postNewSenatorParametersTable,
+  example_response: null,
+  response_table: postNewSenatorResponseTable
 }
 
-export const deleteSenatorInfo = {
-
-}
+export const deleteSenatorInfo = ''
