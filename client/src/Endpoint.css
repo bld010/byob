@@ -1,0 +1,10 @@
+.Endpoint {
+  border: 2px solid black;
+  background-color: blanchedalmond;
+  margin: 50px;
+  padding: 30px;
+}
+
+.Endpoint h2 {
+  text-decoration: underline;
+}

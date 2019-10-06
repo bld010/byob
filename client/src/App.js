@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Endpoints } from './Endpoints';
 
 class App extends Component {
   state = {
     states: null,
     senators: null,
-    house_members: null
   }
 
   componentDidMount() {
@@ -27,9 +27,8 @@ class App extends Component {
   render() {
     return(
       <>
-    
-      {this.state.states && <p>{this.state.states.length}</p>}
-      <p> Test </p>
+      <h1>Members of Congress API</h1>
+      <Endpoints />
       </>
 
     )
