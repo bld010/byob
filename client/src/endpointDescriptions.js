@@ -549,7 +549,7 @@ export const postNewStateInfo = {
 export const postNewSenatorInfo = {
   fetchCall: {
     options: {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },

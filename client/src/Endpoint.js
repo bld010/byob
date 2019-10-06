@@ -64,7 +64,6 @@ export default class Endpoint extends Component {
       await this.setState({ request_url })
     } else if (this.state.endpoint_name.includes('POST')) {
       options.body = JSON.stringify(this.state.request_body);
-      console.log(options.body)
     }
     
     
