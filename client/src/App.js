@@ -26,10 +26,10 @@ class App extends Component {
 
   render() {
     return(
-      <>
+      <main>
       <h1>Members of Congress API</h1>
       <Endpoints />
-      </>
+      </main>
 
     )
   }

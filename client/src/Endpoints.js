@@ -5,8 +5,7 @@ export const Endpoints = () => {
 
 
   return(
-    <div>
-      <p>This is where the endpoints components will live.</p>
+    <div className="Endpoints">
       <Endpoint endpoint_name="GET all states"/>
       <Endpoint endpoint_name="GET specific state"/>
       <Endpoint endpoint_name="POST new state" />

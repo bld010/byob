@@ -21,9 +21,9 @@ export default class Endpoint extends Component {
       case "GET all states":
         return getAllStates;
 
-      // case "GET specific state":
+      case "GET specific state":
+        return getSpecificState
 
-      //   return getSpecificState;
       default: return null
     }
   }
@@ -36,27 +36,38 @@ export default class Endpoint extends Component {
 
   render() {
 
+      if (this.state.endpoint_info) {
+        return (
 
-    return (
-      <section className="Endpoint">
-        <h2>{this.state.endpoint_name}</h2>
-        <p>{this.state.endpoint_info && this.state.endpoint_info.description}</p>
-        <h4>Parameters</h4>
-        {this.state.endpoint_info && parse(this.state.endpoint_info.parameters_table)}
-        <h4>Response</h4>
-        {this.state.endpoint_info && parse(this.state.endpoint_info.response_table)}
-        <h4>Example Response</h4> 
-        {this.state.endpoint_info && <ReactJson src={this.state.endpoint_info.example_response} theme="solarized" />}
-        <div>
+          <section className="Endpoint">
+            <h2>{this.state.endpoint_name}</h2>
+            <p>{this.state.endpoint_info.description}</p>
+            <h4>Parameters</h4>
+            {parse(this.state.endpoint_info.parameters_table)}
+            <h4>Response</h4>
+            {parse(this.state.endpoint_info.response_table)}
+            <h4>Example Response</h4> 
+            <ReactJson src={this.state.endpoint_info.example_response}/>
+            <div>
 
-          <h3>Where we will display user fetch component</h3>
-          {/* <button>Click here to test endpoint</button>  */}
-          {/* <div>Show results here based on state</div> */}
-          
-        </div>
+              <h3>Where we will display user fetch component</h3>
+              {/* <button>Click here to test endpoint</button>  */}
+              {/* <div>Show results here based on state</div> */}
+              
+            </div>
 
-      </section>
+          </section>
 
-    )
+        )
+      } else {
+        return (
+          <section className="Endpoint">
+            <h2>{this.state.endpoint_name}</h2>
+          </section>
+        )
+      }
+      
+
+   
   }
 }
