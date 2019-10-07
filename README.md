@@ -7,6 +7,8 @@
 
 Lists all states and US territories that have representatives in Congress. 
 
+[Click here to see documentation and to try API calls](https://members-of-congress-api.herokuapp.com/)
+
 ```
 GET /api/v1/states
 ```
