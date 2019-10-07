@@ -94,8 +94,10 @@ export default class Endpoint extends Component {
     this.setState({ request_body: options })
   }
 
-  updateRequestUrl = (url) => {
-    this.setState({ request_url: url })
+  updateRequestUrl = (id) => {
+    let old_url = this.state.endpoint_info.fetchCall.request_url.replace(':id', '')
+    let updated_url = old_url + id
+    this.setState({ request_url: updated_url })
   }
 
   render() {

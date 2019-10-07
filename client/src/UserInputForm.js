@@ -12,7 +12,8 @@ export default class UserInputForm extends Component {
       rank: '',
       party: '',
       twitter_account: '',
-      url: ''
+      url: '',
+      id: ''
     }
   }
 
@@ -47,6 +48,11 @@ export default class UserInputForm extends Component {
     })
   }
 
+  handleGetId = async (e) => {
+    await this.setState({ id: e.target.value})
+    this.props.updateRequestUrl(this.state.id)
+  }
+
   render = () => {
 
     if (this.props.endpoint_name === 'POST new state') {
@@ -72,9 +78,17 @@ export default class UserInputForm extends Component {
           <button onClick={(e) => this.props.handleTestClick(e, undefined)}>Test API Call</button>
         </form>
       )
-    } else {
-      return (
-        <button>Test API Call</button>
+    } else if (this.props.endpoint_name === 'GET specific senator') {
+        return(
+          <form>
+            <input onChange={this.handleGetId} placeholder="id" name="id"/>
+            <button onClick={(e) => this.props.handleTestClick(e, this.state.id)}>Test API Call</button>
+          </form>
+        )
+      }
+      else {
+        return (
+        <button onClick={(e) => this.props.handleTestClick(e, undefined)}>Test API Call</button>
       )
     }
   
