@@ -1,12 +1,15 @@
 const express = require('express');
 const app = express();
 
+const path = require('path');
+
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 app.listen(app.get('port'), () => {
   console.log(`App is listening on port ${app.get('port')}`)
@@ -150,4 +153,8 @@ app.delete('/api/v1/senators/:id', (request, response) => {
     .catch(error => {
       response.status(500).json({ error })
     })
+})
+
+app.get('*', (request, response) => {
+  response.sendFile(path.join(__dirname+'/client/build/index.html'))
 })
