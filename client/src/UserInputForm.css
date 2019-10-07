@@ -1,0 +1,12 @@
+.UserInputForm {
+  display: flex;
+  flex-direction: column
+}
+
+.UserInputForm input,
+.UserInputForm button {
+  margin: 10px 0 5px 0;
+  height: 20px;
+  font-size: 14px;
+  width: 200px;
+}

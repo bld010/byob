@@ -1,7 +1,7 @@
 .Endpoint {
-  border: 2px solid black;
-  background-color: blanchedalmond;
-  margin: 50px;
+  width: 80%;
+  border: 1px solid dodgerblue;
+  margin: 40px auto 40px auto;
   padding: 30px;
 }
 
@@ -24,10 +24,15 @@
   border: 1px solid black;
   margin-top: 20px;
   padding: 20px;
+  background: blanchedalmond;
 }
 
 .Endpoint .pretty-json-container {
   max-height: 350px;
   min-height: 200px;
   overflow: scroll;
+}
+
+.Endpoint .exampleResponseContainer {
+  max-width: 50%;
 }

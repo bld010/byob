@@ -117,7 +117,7 @@ const getSpecificStateResponseTable = `
 </tr>
 <tr>
 <td>404</td>
-<td><code>{ "error": "Could not find senator with id 300." }</code></td>
+<td>{ "error": "Could not find senator with id 300." }</td>
 </tr>
 </tbody>
 </table>
@@ -145,7 +145,7 @@ const getAllSenatorsParametersTable = `<table>
 <tr>
 <td><code>title</code></td>
 <td><code>string</code></td>
-<td>Senator's full title (Example: <code>'Senator, 1st Class</code>)</td>
+<td>Senator's full title (Example: 'Senator, 1st Class)</td>
 </tr>
 <tr>
 <td><code>state_abbr</code></td>
@@ -160,22 +160,22 @@ const getAllSenatorsParametersTable = `<table>
 <tr>
 <td><code>rank</code></td>
 <td><code>string</code></td>
-<td>Senator's rank (Example: <code>'junior'</code> or <code>'senior'</code>)</td>
+<td>Senator's rank (Example: 'junior' or 'senior')</td>
 </tr>
 <tr>
 <td><code>party</code></td>
 <td><code>string</code></td>
-<td>Capitalized, one-letter abbreviation for senator's party (Example: <code>'R'</code>,<code>'D'</code>, <code>'I'</code>, etc.)</td>
+<td>Capitalized, one-letter abbreviation for senator's party (Example: 'R', 'D', 'I', etc.)</td>
 </tr>
 <tr>
 <td><code>twitter_account</code></td>
 <td><code>string</code></td>
-<td>Senator's official Twitter account handle or <code>null</code> if none provided. (Example: <code>'SenJohnKennedy</code>)</td>
+<td>Senator's official Twitter account handle or <code>null</code> if none provided. (Example: 'SenJohnKennedy)</td>
 </tr>
 <tr>
 <td><code>url</code></td>
 <td><code>string</code></td>
-<td>Senator's official government website URL (Example: <code>'https://www.kennedy.senate.gov/public'</code>)</td>
+<td>Senator's official government website URL (Example: 'https://www.kennedy.senate.gov/public')</td>
 </tr>
 </tbody>
 </table>`
@@ -251,7 +251,7 @@ const getSpecificSenatorParametersTable = `<table>
 <tr>
 <td><code>title</code></td>
 <td><code>string</code></td>
-<td>Senator's full title (Example: <code>'Senator, 1st Class</code>)</td>
+<td>Senator's full title (Example: 'Senator, 1st Class)</td>
 </tr>
 <tr>
 <td><code>state_abbr</code></td>
@@ -266,22 +266,22 @@ const getSpecificSenatorParametersTable = `<table>
 <tr>
 <td><code>rank</code></td>
 <td><code>string</code></td>
-<td>Senator's rank (Example: <code>'junior'</code> or <code>'senior'</code>)</td>
+<td>Senator's rank (Example: 'junior' or 'senior')</td>
 </tr>
 <tr>
 <td><code>party</code></td>
 <td><code>string</code></td>
-<td>Capitalized, one-letter abbreviation for senator's party (Example: <code>'R'</code>,<code>'D'</code>, <code>'I'</code>, etc.)</td>
+<td>Capitalized, one-letter abbreviation for senator's party (Example: 'R', 'D', 'I', etc.)</td>
 </tr>
 <tr>
 <td><code>twitter_account</code></td>
 <td><code>string</code></td>
-<td>Senator's official Twitter account handle or <code>null</code> if none provided. (Example: <code>'SenJohnKennedy</code>)</td>
+<td>Senator's official Twitter account handle or <code>null</code> if none provided. (Example: 'SenJohnKennedy')</td>
 </tr>
 <tr>
 <td><code>url</code></td>
 <td><code>string</code></td>
-<td>Senator's official government website URL (Example: <code>'https://www.kennedy.senate.gov/public'</code>)</td>
+<td>Senator's official government website URL (Example: 'https://www.kennedy.senate.gov/public')</td>
 </tr>
 </tbody>
 </table>`
@@ -318,7 +318,7 @@ const getSpecificSenatorResponseTable =`
 </tr>
 <tr>
 <td>404</td>
-<td><code>{ "error": "Could not find senator with id 300." }</code></td>
+<td>{ "error": "Could not find senator with id 300." }</td>
 </tr>
 </tbody>
 </table>
@@ -359,14 +359,16 @@ const postNewStateResponseTable = `
 <tbody>
 <tr>
 <td>201</td>
-<td>Unique id of newly-created state <code>{ "id": 342" }</code></td>
+<td>Unique id of newly-created state (Example: { "id": 342" })</td>
 </tr>
 <tr>
 <td>422</td>
-<td>{ error: Expected format: { name: <code>&lt;String&gt;</code>, abbreviation <code>&lt;String&gt;</code> } You're missing a [requiredParameter] property. }</td>
+<td>{ error: Expected format: { name: &lt;String&gt;, abbreviation &lt;String&gt; } You're missing a [requiredParameter] property. }</td>
 </tr>
 </tbody>
 </table>`;
+
+
 
 const postNewSenatorParametersTable =`<table>
 <thead>
@@ -385,7 +387,7 @@ const postNewSenatorParametersTable =`<table>
 <tr>
 <td><code>title</code></td>
 <td><code>string</code></td>
-<td>Senator's full title (Example: <code>'Senator, 1st Class</code>)</td>
+<td>Senator's full title (Example: 'Senator, 1st Class')</td>
 </tr>
 <tr>
 <td><code>state_abbr</code></td>
@@ -400,22 +402,22 @@ const postNewSenatorParametersTable =`<table>
 <tr>
 <td><code>rank</code></td>
 <td><code>string</code></td>
-<td><strong>Required</strong> Senator's rank (Example: <code>'junior'</code> or <code>'senior'</code>)</td>
+<td><strong>Required</strong> Senator's rank (Example: 'junior'or 'senior')</td>
 </tr>
 <tr>
 <td><code>party</code></td>
 <td><code>string</code></td>
-<td><strong>Required</strong> Capitalized, one-letter abbreviation for senator's party (Example: <code>'R'</code>,<code>'D'</code>, <code>'I'</code>, etc.)</td>
+<td><strong>Required</strong> Capitalized, one-letter abbreviation for senator's party (Example: 'R', 'D', 'I', etc.)</td>
 </tr>
 <tr>
 <td><code>twitter_account</code></td>
 <td><code>string</code></td>
-<td>Senator's official Twitter account handle or <code>null</code> if none provided. (Example: <code>'SenJohnKennedy</code>)</td>
+<td>Senator's official Twitter account handle or <code>null</code> if none provided. (Example: 'SenJohnKennedy')</td>
 </tr>
 <tr>
 <td><code>url</code></td>
 <td><code>string</code></td>
-<td><strong>Required</strong> Senator's official government website URL (Example: <code>'https://www.kennedy.senate.gov/public'</code>)</td>
+<td><strong>Required</strong> Senator's official government website URL (Example: 'https://www.kennedy.senate.gov/public')</td>
 </tr>
 </tbody>
 </table>`;
@@ -431,11 +433,11 @@ const postNewSenatorResponseTable = `
 <tbody>
 <tr>
 <td>201</td>
-<td>New unique id for created senator (Example: <code>{ "id": 405 }</code>)</td>
+<td>New unique id for created senator (Example: { "id": 405 })</td>
 </tr>
 <tr>
 <td>422</td>
-<td>Expected format: { <code>name:</code> <code>&lt;String&gt;</code>, <code>title:</code> <code>&lt;String&gt;</code>, <code>state_abbr</code>: <code>&lt;String&gt;</code>, <code>state_id:</code> <code>&lt;Number&gt;</code>, <code>rank:</code> <code>&lt;String&gt;</code>, <code>party:</code> <code>&lt;String&gt;</code>, <code>url:</code> <code>&lt;String&gt;</code> } You're missing a [requiredParameter] property.</td>
+<td>Expected format: {name:&lt;String&gt;, title: &lt;String&gt;, state_abbr: &lt;String&gt;, state_id:&lt;Number&gt;, rank: &lt;String&gt;, party: &lt;String&gt;, url: &lt;String&gt; } You're missing a [requiredParameter] property.</td>
 </tr>
 </tbody>
 </table>`;
@@ -449,11 +451,11 @@ const deleteSenatorResponseTable = `<table>
 </thead>
 <tbody>
 <tr>
-<td><code>204</code></td>
+<td>204</td>
 <td><code>No content</code> (Delete was successful.)</td>
 </tr>
 <tr>
-<td><code>404</code></td>
+<td>404</td>
 <td>'Delete unsuccessful. Make sure the senator id is correct in your request url.'</td>
 </tr>
 </tbody>

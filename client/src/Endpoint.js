@@ -124,14 +124,15 @@ export default class Endpoint extends Component {
             {parse(response_table)}
             
             {example_response &&
-              <>
+              <div class="exampleResponseContainer">
               <h4>Example Response</h4> 
               <ReactJson src={example_response} theme="solarized"/>
-              </>
+              </div>
             }
 
-            <div className="testApiContainer">
 
+            {this.state.endpoint_name !== "DELETE senator" && 
+              <div className="testApiContainer">
               <h3>Try it yourself:</h3>
 
               {<code>{this.state.request_url ? fetchCall.options.method + ' ' + this.state.request_url : endpoint_method_and_url}</code>}
@@ -149,8 +150,8 @@ export default class Endpoint extends Component {
                 {this.state.response_data && <ReactJson src={this.state.response_data} theme="solarized" />}
               </div>
               
-            </div>
-
+             </div>
+            }
           </section>
 
         )

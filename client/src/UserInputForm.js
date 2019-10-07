@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './UserInputForm.css'
 
 export default class UserInputForm extends Component {
   constructor(props) {
@@ -57,7 +58,7 @@ export default class UserInputForm extends Component {
 
     if (this.props.endpoint_name === 'POST new state') {
       return(
-        <form>
+        <form className="UserInputForm">
           <input onChange={this.handlePostNewStateInputs} placeholder="state name" name="name" />
           <input onChange={this.handlePostNewStateInputs} placeholder="state abbreviation" name="abbreviation" />
           <button onClick={(e) => this.props.handleTestClick(e, undefined)}>Test API Call</button>
@@ -65,7 +66,7 @@ export default class UserInputForm extends Component {
       )
     } else if (this.props.endpoint_name === 'POST new senator') {
       return(
-        <form>
+        <form className="UserInputForm">
           <input onChange={this.handlePostNewSenatorInputs} placeholder="senator name" name="name" />
           <input onChange={this.handlePostNewSenatorInputs} placeholder="title" name="title" />
           <input onChange={this.handlePostNewSenatorInputs} placeholder="state abbreviation" name="state_abbr" />
@@ -78,9 +79,9 @@ export default class UserInputForm extends Component {
           <button onClick={(e) => this.props.handleTestClick(e, undefined)}>Test API Call</button>
         </form>
       )
-    } else if (this.props.endpoint_name === 'GET specific senator') {
+    } else if (this.props.endpoint_name === 'GET specific senator' || this.props.endpoint_name === "GET specific state") {
         return(
-          <form>
+          <form className="UserInputForm">
             <input onChange={this.handleGetId} placeholder="id" name="id"/>
             <button onClick={(e) => this.props.handleTestClick(e, this.state.id)}>Test API Call</button>
           </form>
@@ -88,8 +89,10 @@ export default class UserInputForm extends Component {
       }
       else {
         return (
-        <button onClick={(e) => this.props.handleTestClick(e, undefined)}>Test API Call</button>
-      )
+          <form className="UserInputForm">
+            <button onClick={(e) => this.props.handleTestClick(e, undefined)}>Test API Call</button>
+          </form>
+        )
     }
   
 
