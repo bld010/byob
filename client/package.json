@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "html-react-parser": "^0.9.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-json-view": "^1.19.1",
